@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+    web_app:
+        build:
+            dockerfile: Dockerfile
+            context: .
+        image: web_fastapi
+        container_name: fastapinew
+        command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+        ports: 
+            - "8000:8000"
+        environment:
+            - DATABASE_URL=mongodb://berghem:3str3ll@.@localhost:27017/appSafe?authSource=admin
+        # env_file:
+        #     - .env
+
+networks:
+    default:
+        external:
+            name: app-safe-network
