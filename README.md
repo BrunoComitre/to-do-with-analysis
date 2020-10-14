@@ -1,9 +1,10 @@
-## NEUMANN
-![version](https://img.shields.io/badge/version-0.2.1-blue.svg?maxAge=2592000)
+# TO-DO LIST WITH FASTAPI + MONGODB
 
-Este projeto é um backend do mundo real baseado em fastapi + mongodb. Ele pode ser usado como um back-end de amostra ou um projeto fastapi de amostra com mongodb.
+![version](https://img.shields.io/badge/version-0.0.1-blue.svg?maxAge=2592000)
 
-O FastApi foi construído para criar apis para servir modelos de Machine Leaarning
+Este projeto é um backend do mundo real baseado em fastapi + mongodb. Ele pode ser usado como um back-end de amostra ou um projeto fastapi ou de amostra com mongodb.
+
+O FastApi foi construído para criar apis para servir modelos de Machine Leaarning, com isso para analises é utilizado Gensim.
 
 ## Começo rápido (Quickstart)
 
@@ -43,15 +44,6 @@ O aplicativo estará disponível em localhostou 127.0.0.1 em seu navegador.
 
 ## Estrutura do projeto
 Os arquivos relacionados ao aplicativo estão no appdiretório. alembicé um diretório com migrações sql. As partes do aplicativo são:
-```
-models  - pydantic models that used in crud or handlers
-crud    - CRUD for types from models (create new user/article/comment, check if user is followed by another, etc)
-db      - db specific utils
-core    - some general components (jwt, security, configuration)
-api     - handlers for routes
-main.py - FastAPI application instance, CORS configuration and api router including
-```
-s
 ```
 neumann/
 ├── app/ = API e documentação
@@ -166,9 +158,7 @@ ORM
 - [Tortoise ORM](https://github.com/tortoise/tortoise-orm)
 - [Motor](https://github.com/mongodb/motor/)
 
-FUTURE
-- [rearq](https://stackoverflow.com/questions/45805380/meaning-of-ampersand-in-docker-compose-yml-file
-https://learnxinyminutes.com/docs/yaml/)
+ANALYZE
 - [requests-toolbelt](https://pypi.org/project/requests-toolbelt/)
 - [nltk](https://github.com/nltk/nltk)
 - [stanza](https://github.com/stanfordnlp/stanza)
@@ -181,15 +171,9 @@ HELP
 - [markqiu](https://github.com/markqiu/fastapi-mongodb-realworld-example-app/tree/master/app)
 - [Tutorial: Using Motor With asyncio](https://motor.readthedocs.io/en/stable/tutorial-asyncio.html?highlight=to_list#querying-for-more-than-one-document)
 
-***
-
-## ORGANIZAR
-
-### LINKS PARA ABRIR
-
-https://github.com/todotxt/todo.txt
-https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md
-
+APPLY
+- [todo.txt format](https://github.com/todotxt/todo.txt)
+- [Notes App](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md)
 - [Full Stack FastAPI and PostgreSQL - Base Project Generator](https://github.com/tiangolo/full-stack-fastapi-postgresql)
 - [Projeto de APIs RESTful com NodeJS e Restify](https://code.tutsplus.com/pt/tutorials/restful-api-design-with-nodejs-restify--cms-22637)
 - [Desenvolvendo e testando uma API assíncrona com FastAPI e Pytest](https://testdriven.io/blog/fastapi-crud/#routes)
@@ -201,41 +185,28 @@ https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-A
 - [Tutorial básico de SQLAlchemy](https://leportella.com/tutorial-basico-sqlalchemy.html)
 - [Tipos de coluna e dados](https://docs.sqlalchemy.org/en/13/core/type_basics.html)
 
-#### Learning FastAPI
-
-Elaboração de um escopo de projeto para teste
-
-IMPLEMENTAR : [Developing and Testing an Asynchronous API with FastAPI and Pytest](https://testdriven.io/blog/fastapi-crud/)
-
-ESTUDAR : [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
-
-ESTUDAR : [Sibling package imports](https://stackoverflow.com/questions/6323860/sibling-package-imports/50193944#50193944)
-
-IMPLEMENTAR NOTAS : [Funções em Python: entendendo parâmetros, argumentos, *args e **kwargs](https://medium.com/luizalabs/fun%C3%A7%C3%B5es-em-python-entendendo-par%C3%A2metros-argumentos-args-e-kwargs-4291b1f817f6)
-
-ESTUDAR : 
+STUDY
+- [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
+- [Sibling package imports](https://stackoverflow.com/questions/6323860/sibling-package-imports/50193944#50193944)
 - [Usando anotações de tipo do Python](https://dev.to/dstarner/using-pythons-type-annotations-4cfe#:~:text=Type%20Annotations%20are%20a%20new,to%20the%20dynamically%20typed%20Python.)
 - [Dicas para digitar dicas (Python 3)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
 - [Verificação de tipo Python (Guia)](https://realpython.com/python-type-checking/)
 - [typing — Support for type hints](https://docs.python.org/3/library/typing.html)
+- [Gensim Core Concepts](https://radimrehurek.com/gensim/auto_examples/core/run_core_concepts.html)
+- [The troublesome "Active Record" pattern](http://calpaterson.com/activerecord.html)
+- [Standardizing the World of Machine Learning Web Service APIs](https://www.kdnuggets.com/2015/07/psi-machine-learning-web-service-apis.html)
+- [Protocols and Structures for Inference](https://www.google.com/search?q=Protocols+and+Structures+for+Inference&oq=Protocols+and+Structures+for+Inference&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8)
+- [Protocols and Structures for Inference: A RESTful API for Machine Learning](http://proceedings.mlr.press/v50/montgomery15.pdf)
 
+TEST
+- [expressive_regex](https://github.com/fsadannn/expressive_regex)
+- [more-itertools](https://pypi.org/project/more-itertools/)
+
+IMPLEMENT
+- [Developing and Testing an Asynchronous API with FastAPI and Pytest](https://testdriven.io/blog/fastapi-crud/)
+- [Funções em Python: entendendo parâmetros, argumentos, *args e **kwargs](https://medium.com/luizalabs/fun%C3%A7%C3%B5es-em-python-entendendo-par%C3%A2metros-argumentos-args-e-kwargs-4291b1f817f6)
 
 ***
-
-marcando aqui
-
-
-crud e ou crud_or_payloads virou PAYLOADS apenas PAYLOADS
-
-
-agora o fabio reesplicando, o pessoal quer resultado da gravação e resultado teste
-gravação sao erros ou possiveis vulnerabilidades
-teste, sao as analalises geradas de acordo com a quantidade de teste
-os retestes seriam os resultados dos testes comparado com a gravação marcando a diferença de cada reteste
-
-
-    # def convert_list_to_dict(data: List):
-    #     return reduce(lambda k, v: dict(k=v), data)
 
 ## NOTAS PARA TESTE
 
@@ -251,8 +222,6 @@ limpar o quintal
 limpar a geladeira
 limpar o fogão
 
-
-
 tarefas escolares
 fazer o trabalho de história
 fazer os exercicios de matemática
@@ -265,45 +234,5 @@ reunião com o cliente
 tarefas do veículo
 trocar o óleo
 trocar as pastilhas de freio
-
-***
-
-# APPSAFE NEXT STEP
-
-## TO-DO
-
-- [ ] - Utilizar tutorial de [Importando arquivos JSON para Data Science](https://towardsdatascience.com/lots-of-json-29873d3abfdf), para dar um get all na base e formatar os dados seprados para criar modelos.
-- [ ] - Ver com o Thiago a implementação de um front separado, parecido com [Ferramenta de teste de dados estruturados](https://search.google.com/structured-data/testing-tool).
-- [ ] - Se possível testar o Sklearn para testar [Similaridade entre comentários](https://medium.com/@octaviofisica/similaridade-entre-coment%C3%A1rios-20d1812b6dc4).
-- [ ] - Quando separado as url's, testar o [micawber](https://github.com/coleifer/micawber), para extrair valor das url's.
-- [ ] - Depois de definido e estruturado os dados, aplicar técnicas confomre [Machine Learning for Cybersecurity 101](https://towardsdatascience.com/machine-learning-for-cybersecurity-101-7822b802790b).
-
-<br />
-
-***
-
-## TESTAR
-
-- [expressive_regex](https://github.com/fsadannn/expressive_regex)
-- [more-itertools](https://pypi.org/project/more-itertools/)
-
-<br />
-
-***
-
-## ESTUDAR
-
-- [Gensim Core Concepts](https://radimrehurek.com/gensim/auto_examples/core/run_core_concepts.html)
-- [The troublesome "Active Record" pattern](http://calpaterson.com/activerecord.html)
-
-<br />
-
-## API PSI
-
-- [Standardizing the World of Machine Learning Web Service APIs](https://www.kdnuggets.com/2015/07/psi-machine-learning-web-service-apis.html)
-- [Protocols and Structures for Inference](https://www.google.com/search?q=Protocols+and+Structures+for+Inference&oq=Protocols+and+Structures+for+Inference&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8)
-- [Protocols and Structures for Inference: A RESTful API for Machine Learning](http://proceedings.mlr.press/v50/montgomery15.pdf)
-
-<br />
 
 ***
