@@ -11,11 +11,11 @@ services:
         ports: 
             - "8000:8000"
         environment:
-            - DATABASE_URL=mongodb://berghem:3str3ll@.@localhost:27017/appSafe?authSource=admin
+            - DATABASE_URL=mongodb://username:passsword@localhost:27017/development?authSource=admin
         # env_file:
         #     - .env
 
 networks:
     default:
         external:
-            name: app-safe-network
+            name: to-do-network

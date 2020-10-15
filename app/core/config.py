@@ -26,16 +26,16 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 10
 
 MONGODB_URL = os.getenv("MONGODB_URL", "")  # deploying without docker-compose
 
-username = urllib.parse.quote_plus('berghem')
-password = urllib.parse.quote_plus("3str3ll@.")
+username = urllib.parse.quote_plus('username')
+password = urllib.parse.quote_plus("password")
 
 
 if not MONGODB_URL:
     MONGO_HOST = os.getenv("MONGO_HOST", "mongodb")
     MONGO_PORT = int(os.getenv("MONGO_PORT", 27017))
-    MONGO_USER = os.getenv("MONGO_USER", "berghem")
-    MONGO_PASS = os.getenv("MONGO_PASSWORD", "3str3ll@.")
-    MONGO_DB = os.getenv("MONGO_DB", "appSafe")
+    MONGO_USER = os.getenv("MONGO_USER", "username")
+    MONGO_PASS = os.getenv("MONGO_PASSWORD", "password")
+    MONGO_DB = os.getenv("MONGO_DB", "development")
     MONGO_AUTH_SOURCE = os.getenv("MONGO_AUTH_SOURCE", "admin")
 
     MONGODB_URL = DatabaseURL(
