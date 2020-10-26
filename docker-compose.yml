@@ -7,7 +7,7 @@ services:
             context: .
         image: web_fastapi
         container_name: fastapinew
-        command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+        command: uvicorn app.main:app --workers 1 --host 0.0.0.0 --port 8000
         ports: 
             - "8000:8000"
         environment:
