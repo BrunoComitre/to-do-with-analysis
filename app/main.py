@@ -1,13 +1,19 @@
+import uvicorn
 from fastapi import FastAPI
+from logging.config import dictConfig
+
 from starlette.middleware.cors import CORSMiddleware
 from .api.api_v1.api import router as api_router
 
 from .core.config import ALLOWED_HOSTS, API_V1_STR, PROJECT_NAME
 from .core.errors import setup_exception_handlers
 from .db.mongodb_utils import connect_to_mongo, disconnect_to_mongo
+from .logs.logging import log_config
 
 
-app = FastAPI(title=PROJECT_NAME)
+dictConfig(log_config)
+
+app = FastAPI(title=PROJECT_NAME, debug=True)
 
 
 if not ALLOWED_HOSTS:
@@ -21,8 +27,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.add_event_handler("startup",connect_to_mongo)
-app.add_event_handler("shutdown",disconnect_to_mongo)
+app.add_event_handler("startup", connect_to_mongo)
+app.add_event_handler("shutdown", disconnect_to_mongo)
 
 setup_exception_handlers(app)
 

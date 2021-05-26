@@ -1,5 +1,7 @@
 # ROADMAP
 
+Como um projeto que poderá ter continuidade, segue algumas ideias de implementações futuras.
+
 ## TO-DO
 
 - Essential

@@ -16,6 +16,7 @@ load_dotenv(".env")
 
 MAX_CONNECTIONS_COUNT = int(os.getenv("MAX_CONNECTIONS_COUNT", 10))
 MIN_CONNECTIONS_COUNT = int(os.getenv("MIN_CONNECTIONS_COUNT", 10))
+
 SECRET_KEY = secrets.token_urlsafe(32)
 ALGORITHM = "HS256"
 
@@ -26,7 +27,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 10
 
 MONGODB_URL = os.getenv("MONGODB_URL", "")  # deploying without docker-compose
 
-username = urllib.parse.quote_plus('username')
+username = urllib.parse.quote_plus("username")
 password = urllib.parse.quote_plus("password")
 
 
@@ -39,12 +40,13 @@ if not MONGODB_URL:
     MONGO_AUTH_SOURCE = os.getenv("MONGO_AUTH_SOURCE", "admin")
 
     MONGODB_URL = DatabaseURL(
-        f'mongodb://{username}:{password}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB}?authSource={MONGO_AUTH_SOURCE}'
+        f"mongodb://{username}:{password}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB}?authSource={MONGO_AUTH_SOURCE}"
     )
 else:
     MONGODB_URL = DatabaseURL(MONGODB_URL)
 
 database_name = MONGO_DB
+orders_collection = "orders"
 analyze_collection = "smartresult"
 gensim_collection = "gensimtestresult"
 user_collection = "users"

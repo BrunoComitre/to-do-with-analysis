@@ -1,21 +1,37 @@
-version: '3.7'
+version: "3.7"
 
 services:
-    web_app:
-        build:
-            dockerfile: Dockerfile
-            context: .
-        image: web_fastapi
-        container_name: fastapinew
-        command: uvicorn app.main:app --workers 1 --host 0.0.0.0 --port 8000
-        ports: 
-            - "8000:8000"
-        environment:
-            - DATABASE_URL=mongodb://username:passsword@localhost:27017/development?authSource=admin
-        # env_file:
-        #     - .env
+  web_app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: web_fastapi
+    container_name: fastapinew
+    command: bash -c "uvicorn app.main:app --workers 1 --host 0.0.0.0 --port 8000 --reload"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    environment:
+      - DATABASE_URL=mongodb://username:passsword@localhost:27017/development?authSource=admin
+    # env_file:
+    #     - .env
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=username
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=development
+      - AUTH=no
+    volumes:
+      - ./data/db:/var/micro-data/mongodb/data/db
+    ports:
+      - 27017:27017 # remove this line on prod
+    command: mongod --logpath=/dev/null # --quiet
 
 networks:
-    default:
-        external:
-            name: to-do-network
+  default:
+    external:
+      name: to-do-network

@@ -1,4 +1,3 @@
--r requirements/analyze.txt
 -r requirements/dev.txt
 -r requirements/test.txt
 

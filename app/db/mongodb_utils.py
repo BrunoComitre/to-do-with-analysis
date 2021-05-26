@@ -1,17 +1,26 @@
 import logging
+from fastapi import FastAPI
 
 from motor.motor_asyncio import AsyncIOMotorClient
 from ..core.config import MONGODB_URL, MAX_CONNECTIONS_COUNT, MIN_CONNECTIONS_COUNT
 from .mongodb import db
 
 
+app = FastAPI()
+
+
+@app.on_event("startup")
 async def connect_to_mongo():
     logging.info("Connecting...")
-    db.client = AsyncIOMotorClient(str(MONGODB_URL),
-                                   maxPoolSize=MAX_CONNECTIONS_COUNT,
-                                   minPoolSize=MIN_CONNECTIONS_COUNT)
+    db.client = AsyncIOMotorClient(
+        str(MONGODB_URL),
+        maxPoolSize=MAX_CONNECTIONS_COUNT,
+        minPoolSize=MIN_CONNECTIONS_COUNT,
+    )
     logging.info("Connected")
 
+
+@app.on_event("shutdown")
 async def disconnect_to_mongo():
     logging.info("Disconnecting...")
     db.client.close()

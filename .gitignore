@@ -213,3 +213,6 @@ ipython_config.py
 # Complexity
 output/*.html
 output/*/index.html
+
+# Draft & Test Appeals Rules
+draft/

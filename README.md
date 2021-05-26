@@ -7,59 +7,58 @@ This is a real-world backend project based on FastApi + MongoDB. It can be used 
 
 FastApi was built to create apis to serve Machine Learning models, with that it is used for analysis [Gensim](https://radimrehurek.com/gensim/).
 
+Bem-vindo ao nosso Monorepo
+
+Teste Técnico Desenvolvedor Backend escrito em Python.
+
+Este é um projeto de back-end do mundo real baseado em FastApi + MongoDB. Ele pode ser usado como um back-end de amostra CRUD ou um projeto de amostra FastApi ou MongoDB.
+
+FastApi foi construído para criar apis para servir modelos de Machine Learning, com isso é usado para análise [Gensim](https://radimrehurek.com/gensim/).
+
 ***
-<br />
+
+&nbsp;
 
 ## Quickstart
 
-Run test:
-``` $ docker-compose exec web pytest . ```
 
-To execute:
-``` $ ipython -i test.py ``` or ``` $ python3 -i test.py ```
+Este README destina-se a orientar como este projeto está estruturado e deve servir como um guia para ajudar na escala do projeto com os requisitos atuais e futuros. Pense nisso como um conjunto flexível de regras que orientam as decisões do projeto. Enquanto eles podem (e provavelmente irão) mudar ao longo do tempo, as discussões devem ser levantadas para desencadear tais mudanças: isso significa que vamos pensar/questionar a nós mesmos antes de tomar uma ação que quebra qualquer decisão racional tomada aqui. Isso é também eficaz para orientar as discussões de PR.
 
-If you need to find the Pipenv PATH:
-``` $ pipenv --venv ```
+- [Configuração Inicial](#configuracao-inicial): como configurar seu projeto local;
+- [Contribuição & Boas Práticas](#-contribuicao--boas-praticas): recomendação sobre como escrever um bom código para esta aplicação;
+- [Arquitetura](#arquitetura): como esta aplicação funciona por dentro;
+- [Licença](#licenca): como este software é licenciado e como você pode usá-lo. 
 
-Run the uvicorn server:
-``` $ uvicorn main:app --reload ```
-
-To run the debugging web application, use:
-``` $ uvicorn app.main:app --reload ```
-
-Then, create the .env file (or rename and modify .env) at the root of the project and set the environment variables for the application:
-
-```
-touch .env
-echo "PROJECT_NAME=FastAPI" >> .env
-echo DATABASE_URL=mongo://$MONGO_USER:$MONGO_PASSWORD@$MONGO_HOST:$MONGO_PORT/$MONGO_DB >> .env
-echo ALLOWED_HOSTS='"127.0.0.1", "localhost"' >> .env
-```
+&nbsp;
 
 ***
-<br />
 
-## Deploy with Docker
+## Configuração Inicial
 
-You must have docker and docker-compose tools installed to work with material in this section. First, create the .env file as in the Quickstart section or modify .env example MONGO_HOST must be specified as db or modified docker-compose.yml. Then just run:
-``` docker-compose up -d ```
+Se você não tem ideia de como instalar o Python e executá-lo localmente, acesse o link [Python](https://www.python.org/downloads/).
 
-The application will be available on localhost 127.0.0.1 in your browser.
 
-***
-<br />
-
-## Web routes
-
-All routes are available in ``` /docs ``` or ``` /redoc ```, paths with Swagger* or ReDoc.
-
-- [Documentation docs](http://localhost:8000/docs)
-- [Documentation redoc](http://localhost:8000/redoc)
-
-*[Swagger](https://swagger.io/) - Swagger is an open source software framework supported by a large ecosystem of tools that helps developers design, create, document and consume RESTful web services.
+Se você tiver o Python configurado localmente, na pasta raiz do projeto, instale as dependências da aplicação.
 
 ***
-<br />
+
+## Contribuição & Boas Práticas
+
+Para diretrizes de contribuição, verifique [CONTRIBUTING.md](https://github.com/BrunoComitre/Test_a55/blob/main/CONTRIBUTING.md) ou [CODE.md](https://github.com/BrunoComitre/Test_a55/blob/main/CODE.md) para estilos de codificação.
+
+***
+
+## Arquitetura
+
+Como este aplicativo funciona de dentro e como ele interage com dependências externas - escrito em detalhes em [ARCHITECTURE.md](ARCHITECTURE.md).
+
+***
+
+## Licença
+
+A aplicação Sploot é publicado sob licença sob [BSD 3-Clause](LICENSE).
+
+***
 
 ## Sample test notes
 
