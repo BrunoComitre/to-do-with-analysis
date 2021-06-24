@@ -44,7 +44,7 @@ Se você tiver o Python configurado localmente, na pasta raiz do projeto, instal
 
 ## Contribuição & Boas Práticas
 
-Para diretrizes de contribuição, verifique [CONTRIBUTING.md](https://github.com/BrunoComitre/Test_a55/blob/main/CONTRIBUTING.md) ou [CODE.md](https://github.com/BrunoComitre/Test_a55/blob/main/CODE.md) para estilos de codificação.
+Para diretrizes de contribuição, verifique [CONTRIBUTING.md](https://github.com/BrunoComitre/to-do-with-analysis/blob/main/CONTRIBUTING.md) ou [CODE.md](https://github.com/BrunoComitre/to-do-with-analysis/blob/main/CODE.md) para estilos de codificação.
 
 ***
 
@@ -56,7 +56,7 @@ Como este aplicativo funciona de dentro e como ele interage com dependências ex
 
 ## Licença
 
-A aplicação Sploot é publicado sob licença sob [BSD 3-Clause](LICENSE).
+A aplicação é publicada sob licença sob [BSD 3-Clause](LICENSE).
 
 ***
 
